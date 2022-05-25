@@ -4,7 +4,6 @@ import App from './App'
 import { Web3ReactProvider } from '@web3-react/core';
 import './App.css';
 import './index.css';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { connectors, Web3Provider } from './modules/provider/Provider'
