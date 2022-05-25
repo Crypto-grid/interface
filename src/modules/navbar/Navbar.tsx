@@ -1,8 +1,8 @@
 import { useWeb3React } from "@web3-react/core"
+import { useEffect } from "react"
 import logo from "/logosmall.png"
 
 export const Navbar = () => {
-    const web3 = useWeb3React()
     return (
         <div className="flex items-center w-full overflow-hidden">
             <div className="flex-l rounded-md justify-start">
