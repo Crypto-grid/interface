@@ -68,7 +68,7 @@ export const OverlayButtons = ({ openInventory, openStore }: inventoryProps ) =>
               <Row>
                 <Button
                     onClick={(): void => {
-                    window.open('https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA');
+                    window.open("https://discord.gg/7WqQWq");
                     }}
                     size="large"
                     shape="round">
@@ -158,8 +158,8 @@ export const OverlayButtons = ({ openInventory, openStore }: inventoryProps ) =>
 
   return (
     <>
-       {left}
-       {right}
+      {left}
+      {right}
     </>
   )
 }
