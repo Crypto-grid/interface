@@ -1,0 +1,56 @@
+.inventoryModal {
+    width: 90vw;    /* Occupy the 90% of the screen width */
+    max-width: 90vw;
+} 
+
+.item-container {
+	height: 200px;
+	width: 200px;
+	background: white;
+	border-radius: 20px;
+	box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.75);
+    padding-top: 50px;
+}
+
+.row-bottom-margin { 
+    margin-bottom:50px; 
+}
+
+.item-display-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60%;
+    color: black;
+}
+
+.item-display {
+	display: flex;
+	border-radius: 50%;
+	color: #ffffff;
+	height: 250px;
+	width: 250px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	font-size: 48px;
+	/* border: 3px #ffffff solid; */
+	transition: background 0.5s;
+}
+
+.item-pic {
+    height: 180px;
+    width: 180px;
+}
+
+/* .neutral {
+	background: rgb(184, 184, 184);
+}
+
+.cold {
+	background: #035aa6;
+}
+
+.hot {
+	background: #ff5200;
+} */
