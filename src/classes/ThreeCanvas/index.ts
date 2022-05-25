@@ -61,6 +61,7 @@ class ThreeCanvas extends THREE.Scene {
   private props: any;
   private objectName: string;
   private clickCounter: number;
+  // private loadingManager: THREE.LoadingManager;
   // private FirstPersonControls: THREE.FirstPersonControls;
 
   
@@ -87,7 +88,10 @@ class ThreeCanvas extends THREE.Scene {
     // camera.position.z = 5;
     camera.position.set(0,0,5);
     
-    
+    // const loadingManager = this.loadingManager = new THREE.LoadingManager();
+    // loadingManager.onStart = function(url, item, total) {
+    //   console.log();
+    // }
 
     // post processing support
     const composer = this.composer = new EffectComposer( renderer );
@@ -303,6 +307,9 @@ class ThreeCanvas extends THREE.Scene {
 //   // this.updateBullets()
 // }
   render() {
+    // if ( RESOURCES_LOADED == false ) {
+
+    // }
     // check if we need to resize the canvas and re-setup the camera
     if (this.resizeRendererToDisplaySize(this.renderer)) {
       const canvas = this.renderer.domElement;

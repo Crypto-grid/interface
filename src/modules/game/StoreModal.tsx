@@ -1,7 +1,8 @@
 import React from 'react'
 import { Tab, Tabs, Button, Modal, Row, Col } from 'react-bootstrap'
 
-import { Exchange } from './Exchange'
+import { Exchange } from './Exchange';
+import { HardwareStore } from './HardwareStore';
 
     // const Exchange = 
     // needs state for openModal
@@ -40,6 +41,7 @@ export const StoreModal = ({ storeModalOpen, storeModalParams, closeStore}: Stor
                         < Exchange />
                     </Tab>
                     <Tab eventKey="equipment" title="Equipment">
+                        < HardwareStore />
                     💻 Equipment Store
                     </Tab>
                     <Tab eventKey="rebirths" title="Rebirths">
