@@ -6,6 +6,7 @@ import './App.css'
 import ThreeComponent from './modules/game'
 import { Navbar } from './modules/navbar/Navbar'
 import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
+import { Login } from './login/Login'
 
 // import './modules/styles/css/tailwind-base.pcss';
 // import './modules/styles/css/tailwind-components.pcss';
@@ -20,17 +21,15 @@ import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
 
 
 function App() {
-  const [connected, setConnected] = useState(true)
-  const web3 = useWeb3React()
-
+  const [connected, setConnected] = useState(false)
   useEffect(() => {
-      const activate = web3.connector.activate() as Promise<void>
-    }, [])
+      setConnected(false)
+  }, [])
 
   return (
     <div className="App">
       <Navbar/>
-      {connected ? <ThreeComponent /> : <div>Loading...</div>}
+      {connected ? <ThreeComponent /> : <Login/>}
       {/* <ThemeSwitcherProvider themes={themes}/> */}
     </div>
   )
