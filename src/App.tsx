@@ -29,7 +29,8 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      {connected ? <ThreeComponent /> : <Login/>}
+      {/* {connected ? <ThreeComponent /> : <Login/>} */}
+      <ThreeComponent />
       {/* <ThemeSwitcherProvider themes={themes}/> */}
     </div>
   )
