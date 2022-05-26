@@ -9,7 +9,8 @@ import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
 import { Login } from './login/Login'
 import { ethers } from "ethers"
 
-import { deployedContractAddresses }  from './utils/deployedContractAddresses';
+// import { deployedContractAddresses }  from './utils/deployedContractAddresses';
+import { ERC20_ABI } from './utils/ERC20ABI'
 
 // import './modules/styles/css/tailwind-base.pcss';
 // import './modules/styles/css/tailwind-components.pcss';
@@ -43,16 +44,20 @@ function App() {
   // const balance = await provider.getBalance(address); //wallet address
   // const balanceFormatted = ethers.utils.formatEther(balance);
 
-  const ERC20_ABI = [//can have more rows if required
-    "function name() view returns (string)",
-    "function symbol() view returns (string)",
-    "function totalSupply() view returns (uint256)",
-    "function balanceOf(address) view returns (uint)",
-  ]
+  // const ERC20_ABI = [
+  //   "function name() view returns (string)",
+  //   "function symbol() view returns (string)",
+  //   "function totalSupply() view returns (uint256)",
+  //   "function balanceOf(address) view returns (uint)",
+  // ]
+
+  
   // }
   async function getContract(address, ERC20_ABI, provider) {
     const contract = await new ethers.Contract(address, ERC20_ABI, provider)
     console.log("contract: ", contract);
+    console.log("provider: ", provider)
+    console.log("ERC20_ABI: ", ERC20_ABI)
     return contract
   } 
 
@@ -63,7 +68,8 @@ function App() {
     // const totalSupply = await contract.totalSupply();
     const balance = await contract.balanceOf(address);
     const balanceFormatted = ethers.utils.formatEther(balance);
-    return [name, symbol, balance, balanceFormatted]
+    // return [name, symbol, balance, balanceFormatted]
+    return balanceFormatted;
   } 
 
   const gridContract = getContract(grid, ERC20_ABI, provider);
@@ -74,7 +80,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Navbar gridBalanceFormatted={gridBalanceFormatted}/> */}
+
+      <Navbar gridBalanceFormatted={(connected)?gridBalanceFormatted:0}/>
       {/* {connected ? <ThreeComponent /> : <Login/>} */}
       <ThreeComponent />
       {/* <ThemeSwitcherProvider themes={themes}/> */}
