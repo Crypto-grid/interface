@@ -3,7 +3,7 @@ import './exchange.css'
 
 export const Exchange = () => {
   return (
-    <React.Fragment>
+    <>
     <div>💱 Exchange</div>
     <div className="container">
         <div className="row">
@@ -56,8 +56,7 @@ export const Exchange = () => {
             </div>
           </div>
         </div>
-      </div>
-    </React.Fragment>
-
+      </div>=
+    </>
   )
 }

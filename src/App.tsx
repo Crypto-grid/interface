@@ -1,6 +1,3 @@
-import { useWeb3React } from '@web3-react/core'
-import { Network } from '@web3-react/network'
-import { WalletConnect } from '@web3-react/walletconnect'
 import { useEffect, useState } from 'react'
 import './App.css'
 import ThreeComponent from './modules/game'
@@ -23,13 +20,13 @@ import { Login } from './login/Login'
 function App() {
   const [connected, setConnected] = useState(false)
   useEffect(() => {
-      setConnected(false)
+      setConnected(true)
   }, [])
 
   return (
     <div className="App">
       <Navbar/>
-      {connected ? <ThreeComponent /> : <Login/>}
+      {connected ? <ThreeComponent /> : <></>}
       {/* <ThemeSwitcherProvider themes={themes}/> */}
     </div>
   )
