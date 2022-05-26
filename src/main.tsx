@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { Web3ReactProvider } from '@web3-react/core';
+// import { Web3ReactProvider } from '@web3-react/core';
+import { Web3ContextProvider } from 'ethers-react'
 import './App.css';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
