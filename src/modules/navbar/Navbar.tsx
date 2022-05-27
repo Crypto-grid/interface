@@ -1,4 +1,3 @@
-import { useWeb3React } from "@web3-react/core"
 import { useEffect } from "react"
 import logo from "/logosmall.png"
 

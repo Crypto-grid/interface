@@ -20,13 +20,13 @@ import { Login } from './login/Login'
 function App() {
   const [connected, setConnected] = useState(false)
   useEffect(() => {
-      setConnected(true)
+      setConnected(false)
   }, [])
 
   return (
     <div className="App">
       <Navbar/>
-      {connected ? <ThreeComponent /> : <></>}
+      {connected ? <ThreeComponent /> : <Login set={(connect: boolean) => {setConnected(connect)}}/>}
       {/* <ThemeSwitcherProvider themes={themes}/> */}
     </div>
   )

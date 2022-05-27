@@ -1,15 +1,20 @@
+import { useEthers } from "@usedapp/core";
 import { disconnect } from "process";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import metamask_logo from "/assets/metamask.svg"
 
-export const Login = () => {
-  const [connected, setConnected] = useState(false);
+interface LoginProps {
+    set: (connect: boolean) => void
+}
 
-  useEffect(() => {}, []);
+export const Login = (props: LoginProps) => {
+  const [connected, setConnected] = useState(false);
+  const { activateBrowserWallet, account, activate, error, deactivate } = useEthers();
+
   return (
     <div className="h-screen bg-slate-900 items-cente">
       <div className="grid grid-cols-2 gap-4">
-        <LoginCard name="Metamask" logo={metamask_logo} connected={connected} connect={() => {}} disconnect={() => {}}/>
+        <LoginCard name="Metamask" logo={metamask_logo} connected={connected} connect={() => {activateBrowserWallet(); setConnected(true); props.set(true)}} disconnect={() => {deactivate; setConnected(false)}}/>
       </div>
     </div>
   );
@@ -26,7 +31,7 @@ interface Props {
 const LoginCard = (props: Props) => {
   return (
     <div className="card w-48 bg-base-100 shadow-xl">
-      <figure className="px-10">
+      <figure className="px-5">
         <img
           src={props.logo}
           alt={props.name}
