@@ -310,7 +310,10 @@ class ThreeComponent extends React.Component<{}, IState> {
               Close
             </Button>
             {/* needs to action appearItems for all inventory items */}
-            <Button variant="primary" onClick={() => this.threeCanvas.threeMeshAppear("Screen", inventoryParams.scene)}>
+            <Button variant="primary" onClick={() => {
+              this.threeCanvas.threeMeshAppear("Screen", inventoryParams.scene)
+              this.threeCanvas.threeMeshAppear("TestMachine", inventoryParams.scene)
+              }}>
               Select All Items
             </Button>
           </Modal.Footer>

@@ -185,7 +185,7 @@ class ThreeCanvas extends THREE.Scene {
       map: screenTexture,
       transparent: true,
       depthWrite:false,
-      opacity: 0,
+      // opacity: 0,
       side: THREE.DoubleSide, 
     });
     const screenGeometry = new THREE.PlaneGeometry(2.1,2.1);
@@ -195,7 +195,7 @@ class ThreeCanvas extends THREE.Scene {
     scene.add(screenMesh); // move to onclick event // could make transparent then appear on select??
 
     const testBoxGeometry = new THREE.BoxGeometry(0.5,0.8,1);
-    const testBoxMesh = new THREE.Mesh(testBoxGeometry, new THREE.MeshBasicMaterial( {color: 0x000000, transparent: true, opacity: 0} ));
+    const testBoxMesh = new THREE.Mesh(testBoxGeometry, new THREE.MeshBasicMaterial( {color: 0x000000} ));
     testBoxMesh.name = 'TestMachine'
     testBoxMesh.position.set(-0.5,-0.8,-3);
     scene.add(testBoxMesh);
@@ -226,6 +226,7 @@ class ThreeCanvas extends THREE.Scene {
   public threeMeshAppear (objectName="Screen", scene: THREE.Scene) {
     let mesh = (<THREE.Mesh>scene.getObjectByName(objectName))
     mesh.material.opacity = 1;
+    console.log("make screen appear")
   }
 
   private handleClick = (event: MouseEvent) => {
